@@ -11,7 +11,7 @@ using namespace std::chrono;
 
 void random(vector<int>&v,int n,int mx)
 {
-    srand((unsigned)time(nullptr));
+    srand((unsigned)time(0));
     int a;
     for(int i = 0;i<n;i++)
     {
@@ -77,7 +77,7 @@ void RadixSort(vector<int>&v,int n)
     auto stop0 = high_resolution_clock::now();
     auto duration0 = duration_cast<microseconds> (stop0 - start0);
     int ok=sortat(v,n);
-    if(ok==1){cout<<"RadixSort a sortat corect. "<<"Timpul de rulare: "<<duration0.count()/1000000.00000000000000<<" secunde\n";}
+    if(ok==1){cout<<"RadixSort a sortat corect. "<<"Timpul de rulare: "<<duration0.count()<<" microsecunde\n";}
     else{cout<<"RadixSort nu a sortat corect.\n";}
 
 }
@@ -160,7 +160,7 @@ void ShellSort(vector<int>&v,int n)
     auto stop2 = high_resolution_clock::now();
     auto duration2 = duration_cast<microseconds> (stop2 - start2);
     int ok=sortat(v,n);
-    if(ok==1){cout<<"ShellSort a sortat corect. "<<"Timpul de rulare: "<<duration2.count()/1000000.00000000000000<<" secunde\n";}
+    if(ok==1){cout<<"ShellSort a sortat corect. "<<"Timpul de rulare: "<<duration2.count()<<" microsecunde\n";}
     else{cout<<"ShellSort nu a sortat corect.\n";}
 }
 
@@ -288,7 +288,7 @@ void HeapSort(vector<int>&v,int n)
     auto stop5 = high_resolution_clock::now();
     auto duration5 = duration_cast<microseconds> (stop5 - start5);
     int ok=sortat(v,n);
-    if(ok==1){cout<<"HeapSort a sortat corect. "<<"Timpul de rulare: "<<duration5.count()/1000000.00000000000000<<" secunde\n";}
+    if(ok==1){cout<<"HeapSort a sortat corect. "<<"Timpul de rulare: "<<duration5.count()<<" microsecunde\n";}
     else{cout<<"HeapSort nu a sortat corect.\n";}
 }
 
@@ -332,7 +332,7 @@ int main()
             auto stop1 = high_resolution_clock::now();
             auto duration1 = duration_cast<microseconds> (stop1 - start1);
             int ok=sortat(v,n);
-            if(ok==1){cout<<"MergeSort a sortat corect. "<<"Timpul de rulare: "<<duration1.count()/1000000.00000000000000<<" secunde\n";}
+            if(ok==1){cout<<"MergeSort a sortat corect. "<<"Timpul de rulare: "<<duration1.count()<<" microsecunde\n";}
             else{cout<<"MergeSort nu a sortat corect.\n";}
 
         }
@@ -361,7 +361,7 @@ int main()
             auto stop3 = high_resolution_clock::now();
             auto duration3 = duration_cast<microseconds>(stop3 - start3);
             int ok=sortat(v,n);
-            if(ok==1){cout<<"QuickSort cu pivot ultimul element a sortat corect. "<<"Timpul de rulare: "<<duration3.count()/1000000.00000000000000<<" secunde\n";}
+            if(ok==1){cout<<"QuickSort cu pivot ultimul element a sortat corect. "<<"Timpul de rulare: "<<duration3.count()<<" microsecunde\n";}
             else{cout<<"QuickSort cu pivot ultimul element nu a sortat corect.\n";}
 
         }
@@ -380,10 +380,10 @@ int main()
             auto stop4 = high_resolution_clock::now();
             auto duration4 = duration_cast<microseconds>(stop4 - start4);
             int ok=sortat(v,n);
-            if(ok==1){cout<<"QuickSort cu pivot mediana 3 a sortat corect. "<<"Timpul de rulare: "<<duration4.count()/1000000.00000000000000<<" secunde\n";}
+            if(ok==1){cout<<"QuickSort cu pivot mediana 3 a sortat corect. "<<"Timpul de rulare: "<<duration4.count()<<" microsecunde\n";}
             else{cout<<"QuickSort cu pivot mediana 3 nu a sortat corect.\n";}
         }
-        if(n>100000000){cout<<"HeapSort-prea mare"<<endl;}
+        if(n>10000000){cout<<"HeapSort-prea mare"<<endl;}
         else
         {
             v.clear();
@@ -406,7 +406,7 @@ int main()
             auto stop6 = high_resolution_clock::now();
             auto duration6 = duration_cast<microseconds>(stop6 - start6);
             int ok=sortat(v,n);
-            if(ok==1){cout<<"Algoritmul nativ c++ a sortat corect. "<<"Timpul de rulare: "<<duration6.count()/1000000.00000000000000<<" secunde\n";}
+            if(ok==1){cout<<"Algoritmul nativ c++ a sortat corect. "<<"Timpul de rulare: "<<duration6.count()<<" microsecunde\n";}
             else{cout<<"Algoritmul nativ c++ nu a sortat corect.\n";}
         }
 
